@@ -2,7 +2,7 @@
 
 An automated ELT pipeline that collects every UFC fight since 1994, models it into a tested star schema, and powers a public Tableau dashboard. It refreshes itself every Sunday after fight night.
 
-**[View the live dashboard on Tableau Public](TABLEAU_LINK_HERE)**
+**[View the live dashboard on Tableau Public]([TABLEAU_LINK_HERE](https://public.tableau.com/views/UFCFightAnalytics_17943355153240/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link))**
 
 | | |
 |---|---|
