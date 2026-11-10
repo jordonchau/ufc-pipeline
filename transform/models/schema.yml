@@ -14,5 +14,6 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('stg_events')
-              field: event_id
+              arguments:
+                to: ref('stg_events')
+                field: event_id

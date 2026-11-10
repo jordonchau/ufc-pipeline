@@ -18,17 +18,20 @@ models:
       - name: event_id
         tests:
           - relationships:
-              to: ref('dim_event')
-              field: event_id
+              arguments:
+                to: ref('dim_event')
+                field: event_id
       - name: winner_id
         tests:
           - relationships:
-              to: ref('dim_fighter')
-              field: fighter_id
+              arguments:
+                to: ref('dim_fighter')
+                field: fighter_id
 
   - name: fct_fighter_fights
     columns:
       - name: result
         tests:
           - accepted_values:
-              values: ['W', 'L', 'D', 'NC']
+              arguments:
+                values: ['W', 'L', 'D', 'NC']
