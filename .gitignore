@@ -1,2 +1,4 @@
 data/raw/html/
 *.duckdb
+__pycache__/
+.DS_Store

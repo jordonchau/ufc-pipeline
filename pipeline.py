@@ -17,6 +17,7 @@ STEPS = [
     ("Load into DuckDB", [sys.executable, "scraper/load.py"], PROJECT_DIR),
     ("dbt run", [DBT, "run"], PROJECT_DIR / "transform"),
     ("dbt test", [DBT, "test"], PROJECT_DIR / "transform"),
+    ("Export for Tableau", [sys.executable, "scraper/export.py"], PROJECT_DIR),
 ]
 
 

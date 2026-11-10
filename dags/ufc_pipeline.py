@@ -1,4 +1,4 @@
-"""Weekly UFC pipeline: scrape -> load -> dbt run -> dbt test.
+"""Weekly UFC pipeline: scrape -> load -> dbt run -> dbt test -> export.
 
 Runs every Sunday at 10 AM Eastern, after Saturday fight night.
 """
@@ -44,4 +44,9 @@ with DAG(
         bash_command=f"cd {PROJECT}/transform && {DBT} test --profiles-dir .",
     )
 
-    scrape_events >> scrape_fights >> load_duckdb >> dbt_run >> dbt_test
+    export_csv = BashOperator(
+        task_id="export_csv",
+        bash_command=f"cd {PROJECT} && {PYTHON} scraper/export.py",
+    )
+
+    scrape_events >> scrape_fights >> load_duckdb >> dbt_run >> dbt_test >> export_csv
