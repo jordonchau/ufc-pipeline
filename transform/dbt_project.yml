@@ -7,3 +7,5 @@ models:
   ufc:
     staging:
       +materialized: view
+    marts:
+      +materialized: table

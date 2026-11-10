@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: dim_event
+    columns:
+      - name: event_id
+        tests: [unique, not_null]
+
+  - name: dim_fighter
+    columns:
+      - name: fighter_id
+        tests: [unique, not_null]
+
+  - name: fct_fights
+    columns:
+      - name: fight_id
+        tests: [unique, not_null]
+      - name: event_id
+        tests:
+          - relationships:
+              to: ref('dim_event')
+              field: event_id
+      - name: winner_id
+        tests:
+          - relationships:
+              to: ref('dim_fighter')
+              field: fighter_id
+
+  - name: fct_fighter_fights
+    columns:
+      - name: result
+        tests:
+          - accepted_values:
+              values: ['W', 'L', 'D', 'NC']
