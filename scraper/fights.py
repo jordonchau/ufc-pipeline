@@ -8,7 +8,7 @@ from playwright.sync_api import sync_playwright
 EVENTS_CSV = "data/raw/events.csv"
 OUTPUT_CSV = "data/raw/fights.csv"
 HTML_DIR = Path("data/raw/html/events")
-TEST_LIMIT = 1
+TEST_LIMIT = None
 DELAY_SECONDS = 1.5
 
 def get_event_html(page, event_id, url):
