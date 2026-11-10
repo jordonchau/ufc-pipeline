@@ -1,0 +1,693 @@
+[0m00:17:26.484855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e37770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107da7c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107da7750>]}
+
+
+============================== 00:17:26.487699 | ac67a813-86d5-4d82-9165-0b03640e094c ==============================
+[0m00:17:26.487699 [info ] [MainThread]: Running with dbt=1.12.6
+[0m00:17:26.487960 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'debug': 'False', 'quiet': 'False', 'use_experimental_parser': 'False', 'warn_error': 'None', 'introspect': 'True', 'invocation_command': 'dbt debug', 'partial_parse': 'True', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'empty': 'None', 'version_check': 'True', 'cache_selected_only': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'log_path': '/Users/jordonchau/ufc-pipeline/transform/logs', 'log_format': 'default', 'log_cache_events': 'False', 'profiles_dir': '/Users/jordonchau/ufc-pipeline/transform', 'use_colors': 'True', 'indirect_selection': 'eager', 'target_path': 'None', 'fail_fast': 'False', 'hints_enabled': 'True'}
+[0m00:17:26.495108 [info ] [MainThread]: dbt version: 1.12.6
+[0m00:17:26.495302 [info ] [MainThread]: python version: 3.13.11
+[0m00:17:26.495408 [info ] [MainThread]: python path: /opt/miniconda3/bin/python
+[0m00:17:26.495507 [info ] [MainThread]: os info: macOS-26.6.2-arm64-arm-64bit-Mach-O
+[0m00:17:26.565999 [info ] [MainThread]: Using profiles dir at /Users/jordonchau/ufc-pipeline/transform
+[0m00:17:26.566315 [info ] [MainThread]: Using profiles.yml file at /Users/jordonchau/ufc-pipeline/transform/profiles.yml
+[0m00:17:26.566431 [info ] [MainThread]: Using dbt_project.yml file at /Users/jordonchau/ufc-pipeline/transform/dbt_project.yml
+[0m00:17:26.567674 [info ] [MainThread]: adapter type: duckdb
+[0m00:17:26.567829 [info ] [MainThread]: adapter version: 1.11.1
+[0m00:17:26.633882 [info ] [MainThread]: Configuration:
+[0m00:17:26.634298 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:17:26.634414 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m00:17:26.634506 [info ] [MainThread]: Required dependencies:
+[0m00:17:26.634665 [debug] [MainThread]: Executing "git --help"
+[0m00:17:26.649947 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:17:26.650420 [debug] [MainThread]: STDERR: "b''"
+[0m00:17:26.650540 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:17:26.650652 [info ] [MainThread]: Connection:
+[0m00:17:26.650772 [info ] [MainThread]:   database: ufc
+[0m00:17:26.650853 [info ] [MainThread]:   schema: main
+[0m00:17:26.650935 [info ] [MainThread]:   path: ../data/ufc.duckdb
+[0m00:17:26.651013 [info ] [MainThread]:   config_options: None
+[0m00:17:26.651094 [info ] [MainThread]:   extensions: None
+[0m00:17:26.651174 [info ] [MainThread]:   settings: {}
+[0m00:17:26.651251 [info ] [MainThread]:   external_root: .
+[0m00:17:26.651328 [info ] [MainThread]:   use_credential_provider: None
+[0m00:17:26.651406 [info ] [MainThread]:   attach: None
+[0m00:17:26.651480 [info ] [MainThread]:   filesystems: None
+[0m00:17:26.651555 [info ] [MainThread]:   remote: None
+[0m00:17:26.651629 [info ] [MainThread]:   plugins: None
+[0m00:17:26.651707 [info ] [MainThread]:   disable_transactions: False
+[0m00:17:26.651961 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m00:17:26.685051 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m00:17:26.720824 [debug] [MainThread]: Using duckdb connection "debug"
+[0m00:17:26.721010 [debug] [MainThread]: On debug: select 1 as id
+[0m00:17:26.721118 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:17:26.780175 [debug] [MainThread]: SQL status: OK in 0.059 seconds
+[0m00:17:26.780642 [debug] [MainThread]: On debug: Close
+[0m00:17:26.781018 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m00:17:26.781181 [info ] [MainThread]: [32mAll checks passed![0m
+[0m00:17:26.789961 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.34247014, "process_in_blocks": "0", "process_kernel_time": 0.179148, "process_mem_max_rss": "159137792", "process_out_blocks": "0", "process_user_time": 0.687661}
+[0m00:17:26.790290 [debug] [MainThread]: Command `dbt debug` succeeded at 00:17:26.790232 after 0.34 seconds
+[0m00:17:26.790445 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m00:17:26.790587 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110af9f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111174830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110cade10>]}
+[0m00:17:26.790775 [debug] [MainThread]: Flushing usage events
+[0m00:17:26.956361 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:17:30.878899 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107fa7770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1134f7610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1134f74d0>]}
+
+
+============================== 00:17:30.880626 | aaabd262-363c-48c7-ac82-cc2e06acc84d ==============================
+[0m00:17:30.880626 [info ] [MainThread]: Running with dbt=1.12.6
+[0m00:17:30.880885 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'static_parser': 'True', 'log_format': 'default', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'write_json': 'True', 'fail_fast': 'False', 'quiet': 'False', 'invocation_command': 'dbt run', 'log_cache_events': 'False', 'debug': 'False', 'empty': 'False', 'use_colors': 'True', 'printer_width': '80', 'indirect_selection': 'eager', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'hints_enabled': 'True', 'introspect': 'True', 'profiles_dir': '/Users/jordonchau/ufc-pipeline/transform', 'use_experimental_parser': 'False', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'log_path': '/Users/jordonchau/ufc-pipeline/transform/logs'}
+[0m00:17:31.022716 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'aaabd262-363c-48c7-ac82-cc2e06acc84d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110c85ba0>]}
+[0m00:17:31.043189 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'aaabd262-363c-48c7-ac82-cc2e06acc84d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11362c160>]}
+[0m00:17:31.043977 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m00:17:31.075137 [debug] [MainThread]: checksum: 904eaf7eb949b05b01b24dba715f4c5411b7fd288d029056954f8109789e3c14, vars: {}, profile: ufc, target: dev, version: 1.12.6
+[0m00:17:31.075506 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m00:17:31.075655 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'aaabd262-363c-48c7-ac82-cc2e06acc84d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11381b250>]}
+[0m00:17:31.535154 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on 'stg_fights' in
+package 'ufc' (models/schema.yml). Arguments to generic tests should be nested
+under the `arguments` property.
+[0m00:17:31.535435 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'aaabd262-363c-48c7-ac82-cc2e06acc84d', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113781f40>]}
+[0m00:17:31.615693 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'aaabd262-363c-48c7-ac82-cc2e06acc84d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114b0eb30>]}
+[0m00:17:31.654128 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jordonchau/ufc-pipeline/transform/target/manifest.json
+[0m00:17:31.655496 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jordonchau/ufc-pipeline/transform/target/semantic_manifest.json
+[0m00:17:31.663955 [debug] [MainThread]: Wrote artifact OsiDocument to /Users/jordonchau/ufc-pipeline/transform/target/osi_document.json
+[0m00:17:31.668860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'aaabd262-363c-48c7-ac82-cc2e06acc84d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114d74fc0>]}
+[0m00:17:31.669055 [info ] [MainThread]: Found 2 models, 6 data tests, 2 sources, 511 macros
+[0m00:17:31.669176 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'aaabd262-363c-48c7-ac82-cc2e06acc84d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114dd6450>]}
+[0m00:17:31.669937 [info ] [MainThread]: 
+[0m00:17:31.670074 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m00:17:31.670174 [info ] [MainThread]: 
+[0m00:17:31.670367 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m00:17:31.671962 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_ufc'
+[0m00:17:31.693557 [debug] [ThreadPool]: Using duckdb connection "list_ufc"
+[0m00:17:31.693731 [debug] [ThreadPool]: On list_ufc: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "connection_name": "list_ufc"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"ufc"'
+    
+  
+  
+[0m00:17:31.693826 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:17:31.711643 [debug] [ThreadPool]: SQL status: OK in 0.018 seconds
+[0m00:17:31.712271 [debug] [ThreadPool]: On list_ufc: Close
+[0m00:17:31.712557 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ufc, now create_ufc_main)
+[0m00:17:31.712706 [debug] [ThreadPool]: Creating schema "database: "ufc"
+schema: "main"
+"
+[0m00:17:31.715323 [debug] [ThreadPool]: Using duckdb connection "create_ufc_main"
+[0m00:17:31.715461 [debug] [ThreadPool]: On create_ufc_main: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "connection_name": "create_ufc_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='ufc'
+        and type != 'duckdb'
+    
+  
+[0m00:17:31.715557 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:17:31.716522 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m00:17:31.717014 [debug] [ThreadPool]: Using duckdb connection "create_ufc_main"
+[0m00:17:31.717126 [debug] [ThreadPool]: On create_ufc_main: BEGIN
+[0m00:17:31.717542 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m00:17:31.717643 [debug] [ThreadPool]: Using duckdb connection "create_ufc_main"
+[0m00:17:31.717733 [debug] [ThreadPool]: On create_ufc_main: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "connection_name": "create_ufc_main"} */
+
+    
+    
+        create schema if not exists "ufc"."main"
+    
+[0m00:17:31.718134 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m00:17:31.718442 [debug] [ThreadPool]: On create_ufc_main: COMMIT
+[0m00:17:31.718547 [debug] [ThreadPool]: Using duckdb connection "create_ufc_main"
+[0m00:17:31.718625 [debug] [ThreadPool]: On create_ufc_main: COMMIT
+[0m00:17:31.718776 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m00:17:31.718865 [debug] [ThreadPool]: On create_ufc_main: Close
+[0m00:17:31.719292 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_ufc_main, now list_ufc_main)
+[0m00:17:31.720764 [debug] [ThreadPool]: Using duckdb connection "list_ufc_main"
+[0m00:17:31.720857 [debug] [ThreadPool]: On list_ufc_main: BEGIN
+[0m00:17:31.720933 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:17:31.721095 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m00:17:31.721179 [debug] [ThreadPool]: Using duckdb connection "list_ufc_main"
+[0m00:17:31.721269 [debug] [ThreadPool]: On list_ufc_main: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "connection_name": "list_ufc_main"} */
+select
+      'ufc' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'ufc'
+  
+[0m00:17:31.729306 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m00:17:31.729774 [debug] [ThreadPool]: On list_ufc_main: ROLLBACK
+[0m00:17:31.729991 [debug] [ThreadPool]: On list_ufc_main: Close
+[0m00:17:31.730222 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'aaabd262-363c-48c7-ac82-cc2e06acc84d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114dc7120>]}
+[0m00:17:31.730428 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:17:31.730538 [debug] [MainThread]: On master: BEGIN
+[0m00:17:31.730631 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:17:31.730861 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m00:17:31.730957 [debug] [MainThread]: On master: COMMIT
+[0m00:17:31.731047 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:17:31.731129 [debug] [MainThread]: On master: COMMIT
+[0m00:17:31.731312 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m00:17:31.731461 [debug] [MainThread]: On master: Close
+[0m00:17:31.733191 [debug] [Thread-1 (]: Began running node model.ufc.stg_events
+[0m00:17:31.733414 [info ] [Thread-1 (]: 1 of 2 START sql view model main.stg_events .................................... [RUN]
+[0m00:17:31.733603 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_ufc_main, now model.ufc.stg_events)
+[0m00:17:31.733730 [debug] [Thread-1 (]: Began compiling node model.ufc.stg_events
+[0m00:17:31.736091 [debug] [Thread-1 (]: Writing injected SQL for node "model.ufc.stg_events"
+[0m00:17:31.736471 [debug] [Thread-1 (]: Began executing node model.ufc.stg_events
+[0m00:17:31.736821 [debug] [Thread-1 (]: Using duckdb connection "model.ufc.stg_events"
+[0m00:17:31.736940 [debug] [Thread-1 (]: On model.ufc.stg_events: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "model.ufc.stg_events"} */
+select database_name, type from duckdb_databases()
+[0m00:17:31.737043 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:17:31.737413 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:31.737885 [debug] [Thread-1 (]: Using duckdb connection "model.ufc.stg_events"
+[0m00:17:31.738010 [debug] [Thread-1 (]: On model.ufc.stg_events: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "model.ufc.stg_events"} */
+
+                    select table_name, constraint_type from duckdb_constraints()
+                    where lower(database_name) = lower('ufc')
+                      and lower(schema_name) = lower('main')
+                      and constraint_type in ('PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY')
+                    
+[0m00:17:31.738529 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:31.749254 [debug] [Thread-1 (]: Writing runtime sql for node "model.ufc.stg_events"
+[0m00:17:31.749696 [debug] [Thread-1 (]: Using duckdb connection "model.ufc.stg_events"
+[0m00:17:31.749814 [debug] [Thread-1 (]: On model.ufc.stg_events: BEGIN
+[0m00:17:31.750071 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:31.750208 [debug] [Thread-1 (]: Using duckdb connection "model.ufc.stg_events"
+[0m00:17:31.750343 [debug] [Thread-1 (]: On model.ufc.stg_events: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "model.ufc.stg_events"} */
+
+  
+  create view "ufc"."main"."stg_events__dbt_tmp" as (
+    select
+    event_id,
+    trim(event_name)                          as event_name,
+    cast(event_date as date)                  as event_date,
+    trim(location)                            as location,
+    trim(string_split(location, ',')[-1])     as country,
+    event_url
+from "ufc"."raw"."events"
+  );
+
+[0m00:17:31.751602 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m00:17:31.753557 [debug] [Thread-1 (]: Using duckdb connection "model.ufc.stg_events"
+[0m00:17:31.753689 [debug] [Thread-1 (]: On model.ufc.stg_events: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "model.ufc.stg_events"} */
+alter view "ufc"."main"."stg_events__dbt_tmp" rename to "stg_events"
+[0m00:17:31.754405 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m00:17:31.758227 [debug] [Thread-1 (]: On model.ufc.stg_events: COMMIT
+[0m00:17:31.758350 [debug] [Thread-1 (]: Using duckdb connection "model.ufc.stg_events"
+[0m00:17:31.758454 [debug] [Thread-1 (]: On model.ufc.stg_events: COMMIT
+[0m00:17:31.759099 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m00:17:31.760648 [debug] [Thread-1 (]: Using duckdb connection "model.ufc.stg_events"
+[0m00:17:31.760755 [debug] [Thread-1 (]: On model.ufc.stg_events: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "model.ufc.stg_events"} */
+
+      drop view if exists "ufc"."main"."stg_events__dbt_backup" cascade
+    
+[0m00:17:31.761028 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:31.761893 [debug] [Thread-1 (]: On model.ufc.stg_events: Close
+[0m00:17:31.762845 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'aaabd262-363c-48c7-ac82-cc2e06acc84d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110afea30>]}
+[0m00:17:31.763099 [info ] [Thread-1 (]: 1 of 2 OK created sql view model main.stg_events ............................... [[32mOK[0m in 0.03s]
+[0m00:17:31.763303 [debug] [Thread-1 (]: Finished running node model.ufc.stg_events
+[0m00:17:31.763438 [debug] [Thread-1 (]: Began running node model.ufc.stg_fights
+[0m00:17:31.763612 [info ] [Thread-1 (]: 2 of 2 START sql view model main.stg_fights .................................... [RUN]
+[0m00:17:31.763776 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.ufc.stg_events, now model.ufc.stg_fights)
+[0m00:17:31.763890 [debug] [Thread-1 (]: Began compiling node model.ufc.stg_fights
+[0m00:17:31.764662 [debug] [Thread-1 (]: Writing injected SQL for node "model.ufc.stg_fights"
+[0m00:17:31.764920 [debug] [Thread-1 (]: Began executing node model.ufc.stg_fights
+[0m00:17:31.765860 [debug] [Thread-1 (]: Writing runtime sql for node "model.ufc.stg_fights"
+[0m00:17:31.766086 [debug] [Thread-1 (]: Using duckdb connection "model.ufc.stg_fights"
+[0m00:17:31.766193 [debug] [Thread-1 (]: On model.ufc.stg_fights: BEGIN
+[0m00:17:31.766294 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:17:31.766604 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:31.766721 [debug] [Thread-1 (]: Using duckdb connection "model.ufc.stg_fights"
+[0m00:17:31.766845 [debug] [Thread-1 (]: On model.ufc.stg_fights: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "model.ufc.stg_fights"} */
+
+  
+  create view "ufc"."main"."stg_fights__dbt_tmp" as (
+    select
+    fight_id,
+    event_id,
+    bout_order,
+    bout_order = 1                             as is_main_event,
+    fighter_1_id,
+    fighter_1                                  as fighter_1_name,
+    fighter_2_id,
+    fighter_2                                  as fighter_2_name,
+    outcome,
+    case when outcome = 'win' then fighter_1_id end as winner_id,
+    weight_class,
+    method                                     as method_raw,
+    case
+        when method like 'KO/TKO%' then 'KO/TKO'
+        when method = 'SUB'        then 'Submission'
+        when method like '%DEC'    then 'Decision'
+        when method = 'DQ'         then 'Disqualification'
+        else 'Other'
+    end                                        as method_group,
+    method_detail,
+    try_cast("round" as integer)               as end_round,
+    try_cast(split_part(cast("time" as varchar), ':', 1) as integer) * 60
+      + try_cast(split_part(cast("time" as varchar), ':', 2) as integer)
+                                               as end_time_seconds,
+    fight_url
+from "ufc"."raw"."fights"
+  );
+
+[0m00:17:31.768245 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m00:17:31.768965 [debug] [Thread-1 (]: Using duckdb connection "model.ufc.stg_fights"
+[0m00:17:31.769072 [debug] [Thread-1 (]: On model.ufc.stg_fights: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "model.ufc.stg_fights"} */
+alter view "ufc"."main"."stg_fights__dbt_tmp" rename to "stg_fights"
+[0m00:17:31.769328 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:31.769792 [debug] [Thread-1 (]: On model.ufc.stg_fights: COMMIT
+[0m00:17:31.769900 [debug] [Thread-1 (]: Using duckdb connection "model.ufc.stg_fights"
+[0m00:17:31.770008 [debug] [Thread-1 (]: On model.ufc.stg_fights: COMMIT
+[0m00:17:31.770323 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:31.770840 [debug] [Thread-1 (]: Using duckdb connection "model.ufc.stg_fights"
+[0m00:17:31.770947 [debug] [Thread-1 (]: On model.ufc.stg_fights: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "model.ufc.stg_fights"} */
+
+      drop view if exists "ufc"."main"."stg_fights__dbt_backup" cascade
+    
+[0m00:17:31.771187 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:31.771650 [debug] [Thread-1 (]: On model.ufc.stg_fights: Close
+[0m00:17:31.771871 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'aaabd262-363c-48c7-ac82-cc2e06acc84d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1158987d0>]}
+[0m00:17:31.772098 [info ] [Thread-1 (]: 2 of 2 OK created sql view model main.stg_fights ............................... [[32mOK[0m in 0.01s]
+[0m00:17:31.772501 [debug] [Thread-1 (]: Finished running node model.ufc.stg_fights
+[0m00:17:31.773127 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:17:31.773244 [debug] [MainThread]: On master: BEGIN
+[0m00:17:31.773341 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m00:17:31.773646 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m00:17:31.773776 [debug] [MainThread]: On master: COMMIT
+[0m00:17:31.773872 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:17:31.773958 [debug] [MainThread]: On master: COMMIT
+[0m00:17:31.774145 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m00:17:31.774240 [debug] [MainThread]: On master: Close
+[0m00:17:31.774382 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:17:31.774472 [debug] [MainThread]: Connection 'model.ufc.stg_fights' was properly closed.
+[0m00:17:31.774598 [info ] [MainThread]: 
+[0m00:17:31.774733 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 0.10 seconds (0.10s).
+[0m00:17:31.775020 [debug] [MainThread]: Command end result
+[0m00:17:31.787852 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jordonchau/ufc-pipeline/transform/target/manifest.json
+[0m00:17:31.788837 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jordonchau/ufc-pipeline/transform/target/semantic_manifest.json
+[0m00:17:31.789595 [debug] [MainThread]: Wrote artifact OsiDocument to /Users/jordonchau/ufc-pipeline/transform/target/osi_document.json
+[0m00:17:31.792282 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/jordonchau/ufc-pipeline/transform/target/run_results.json
+[0m00:17:31.792424 [info ] [MainThread]: 
+[0m00:17:31.792573 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:17:31.792671 [info ] [MainThread]: 
+[0m00:17:31.792883 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=2
+[0m00:17:31.793148 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m00:17:31.794485 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.94880223, "process_in_blocks": "0", "process_kernel_time": 0.150449, "process_mem_max_rss": "180387840", "process_out_blocks": "0", "process_user_time": 1.345987}
+[0m00:17:31.794671 [debug] [MainThread]: Command `dbt run` succeeded at 00:17:31.794637 after 0.95 seconds
+[0m00:17:31.794802 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1136759b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1132d73f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11348eb70>]}
+[0m00:17:31.794923 [debug] [MainThread]: Flushing usage events
+[0m00:17:31.867093 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:17:38.038714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105a5f770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10716f4d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10716f750>]}
+
+
+============================== 00:17:38.040527 | 14510c78-68ba-454e-a5f2-59bfea5e4da3 ==============================
+[0m00:17:38.040527 [info ] [MainThread]: Running with dbt=1.12.6
+[0m00:17:38.040793 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'hints_enabled': 'True', 'log_format': 'default', 'empty': 'None', 'maximum_seed_size_mib': '1', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'printer_width': '80', 'debug': 'False', 'target_path': 'None', 'quiet': 'False', 'version_check': 'True', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'use_colors': 'True', 'log_path': '/Users/jordonchau/ufc-pipeline/transform/logs', 'no_print': 'None', 'profiles_dir': '/Users/jordonchau/ufc-pipeline/transform', 'write_json': 'True', 'indirect_selection': 'eager', 'introspect': 'True', 'log_cache_events': 'False', 'invocation_command': 'dbt test', 'static_parser': 'True'}
+[0m00:17:38.163182 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '14510c78-68ba-454e-a5f2-59bfea5e4da3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ffda70>]}
+[0m00:17:38.184381 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '14510c78-68ba-454e-a5f2-59bfea5e4da3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1071a4160>]}
+[0m00:17:38.185191 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m00:17:38.216830 [debug] [MainThread]: checksum: 904eaf7eb949b05b01b24dba715f4c5411b7fd288d029056954f8109789e3c14, vars: {}, profile: ufc, target: dev, version: 1.12.6
+[0m00:17:38.265931 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:17:38.266157 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m00:17:38.266269 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:17:38.270550 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '14510c78-68ba-454e-a5f2-59bfea5e4da3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10789eb50>]}
+[0m00:17:38.322725 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jordonchau/ufc-pipeline/transform/target/manifest.json
+[0m00:17:38.323670 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jordonchau/ufc-pipeline/transform/target/semantic_manifest.json
+[0m00:17:38.328473 [debug] [MainThread]: Wrote artifact OsiDocument to /Users/jordonchau/ufc-pipeline/transform/target/osi_document.json
+[0m00:17:38.336761 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '14510c78-68ba-454e-a5f2-59bfea5e4da3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107b0c320>]}
+[0m00:17:38.337002 [info ] [MainThread]: Found 2 models, 6 data tests, 2 sources, 511 macros
+[0m00:17:38.337146 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '14510c78-68ba-454e-a5f2-59bfea5e4da3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a93690>]}
+[0m00:17:38.337970 [info ] [MainThread]: 
+[0m00:17:38.338095 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m00:17:38.338190 [info ] [MainThread]: 
+[0m00:17:38.338388 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m00:17:38.340285 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_ufc_main'
+[0m00:17:38.361599 [debug] [ThreadPool]: Using duckdb connection "list_ufc_main"
+[0m00:17:38.361798 [debug] [ThreadPool]: On list_ufc_main: BEGIN
+[0m00:17:38.361933 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:17:38.375299 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m00:17:38.375464 [debug] [ThreadPool]: Using duckdb connection "list_ufc_main"
+[0m00:17:38.375563 [debug] [ThreadPool]: On list_ufc_main: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "connection_name": "list_ufc_main"} */
+select
+      'ufc' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'ufc'
+  
+[0m00:17:38.381949 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m00:17:38.382547 [debug] [ThreadPool]: On list_ufc_main: ROLLBACK
+[0m00:17:38.382879 [debug] [ThreadPool]: On list_ufc_main: Close
+[0m00:17:38.383264 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '14510c78-68ba-454e-a5f2-59bfea5e4da3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107b37ee0>]}
+[0m00:17:38.383430 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:17:38.383519 [debug] [MainThread]: On master: BEGIN
+[0m00:17:38.383601 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:17:38.383822 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m00:17:38.383920 [debug] [MainThread]: On master: COMMIT
+[0m00:17:38.384005 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:17:38.384080 [debug] [MainThread]: On master: COMMIT
+[0m00:17:38.384253 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m00:17:38.384336 [debug] [MainThread]: On master: Close
+[0m00:17:38.385127 [debug] [Thread-1 (]: Began running node test.ufc.not_null_stg_events_event_id.715b3f7012
+[0m00:17:38.385276 [info ] [Thread-1 (]: 1 of 6 START test not_null_stg_events_event_id ................................. [RUN]
+[0m00:17:38.385468 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_ufc_main, now test.ufc.not_null_stg_events_event_id.715b3f7012)
+[0m00:17:38.385582 [debug] [Thread-1 (]: Began compiling node test.ufc.not_null_stg_events_event_id.715b3f7012
+[0m00:17:38.391783 [debug] [Thread-1 (]: Writing injected SQL for node "test.ufc.not_null_stg_events_event_id.715b3f7012"
+[0m00:17:38.392145 [debug] [Thread-1 (]: Began executing node test.ufc.not_null_stg_events_event_id.715b3f7012
+[0m00:17:38.392499 [debug] [Thread-1 (]: Using duckdb connection "test.ufc.not_null_stg_events_event_id.715b3f7012"
+[0m00:17:38.392622 [debug] [Thread-1 (]: On test.ufc.not_null_stg_events_event_id.715b3f7012: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "test.ufc.not_null_stg_events_event_id.715b3f7012"} */
+select database_name, type from duckdb_databases()
+[0m00:17:38.392723 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:17:38.393208 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:38.393827 [debug] [Thread-1 (]: Using duckdb connection "test.ufc.not_null_stg_events_event_id.715b3f7012"
+[0m00:17:38.393970 [debug] [Thread-1 (]: On test.ufc.not_null_stg_events_event_id.715b3f7012: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "test.ufc.not_null_stg_events_event_id.715b3f7012"} */
+
+                    select table_name, constraint_type from duckdb_constraints()
+                    where lower(database_name) = lower('ufc')
+                      and lower(schema_name) = lower('main_dbt_test__audit')
+                      and constraint_type in ('PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY')
+                    
+[0m00:17:38.394651 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m00:17:38.401632 [debug] [Thread-1 (]: Writing runtime sql for node "test.ufc.not_null_stg_events_event_id.715b3f7012"
+[0m00:17:38.402374 [debug] [Thread-1 (]: Using duckdb connection "test.ufc.not_null_stg_events_event_id.715b3f7012"
+[0m00:17:38.402508 [debug] [Thread-1 (]: On test.ufc.not_null_stg_events_event_id.715b3f7012: BEGIN
+[0m00:17:38.402822 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:38.402961 [debug] [Thread-1 (]: Using duckdb connection "test.ufc.not_null_stg_events_event_id.715b3f7012"
+[0m00:17:38.403080 [debug] [Thread-1 (]: On test.ufc.not_null_stg_events_event_id.715b3f7012: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "test.ufc.not_null_stg_events_event_id.715b3f7012"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select event_id
+from "ufc"."main"."stg_events"
+where event_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:17:38.405181 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m00:17:38.407030 [debug] [Thread-1 (]: On test.ufc.not_null_stg_events_event_id.715b3f7012: ROLLBACK
+[0m00:17:38.407365 [debug] [Thread-1 (]: On test.ufc.not_null_stg_events_event_id.715b3f7012: Close
+[0m00:17:38.407627 [info ] [Thread-1 (]: 1 of 6 PASS not_null_stg_events_event_id ....................................... [[32mPASS[0m in 0.02s]
+[0m00:17:38.407850 [debug] [Thread-1 (]: Finished running node test.ufc.not_null_stg_events_event_id.715b3f7012
+[0m00:17:38.407984 [debug] [Thread-1 (]: Began running node test.ufc.not_null_stg_fights_event_id.9c3436bfcc
+[0m00:17:38.408156 [info ] [Thread-1 (]: 2 of 6 START test not_null_stg_fights_event_id ................................. [RUN]
+[0m00:17:38.408357 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ufc.not_null_stg_events_event_id.715b3f7012, now test.ufc.not_null_stg_fights_event_id.9c3436bfcc)
+[0m00:17:38.408488 [debug] [Thread-1 (]: Began compiling node test.ufc.not_null_stg_fights_event_id.9c3436bfcc
+[0m00:17:38.410816 [debug] [Thread-1 (]: Writing injected SQL for node "test.ufc.not_null_stg_fights_event_id.9c3436bfcc"
+[0m00:17:38.411102 [debug] [Thread-1 (]: Began executing node test.ufc.not_null_stg_fights_event_id.9c3436bfcc
+[0m00:17:38.411647 [debug] [Thread-1 (]: Writing runtime sql for node "test.ufc.not_null_stg_fights_event_id.9c3436bfcc"
+[0m00:17:38.411871 [debug] [Thread-1 (]: Using duckdb connection "test.ufc.not_null_stg_fights_event_id.9c3436bfcc"
+[0m00:17:38.411978 [debug] [Thread-1 (]: On test.ufc.not_null_stg_fights_event_id.9c3436bfcc: BEGIN
+[0m00:17:38.412079 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:17:38.412302 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:38.412404 [debug] [Thread-1 (]: Using duckdb connection "test.ufc.not_null_stg_fights_event_id.9c3436bfcc"
+[0m00:17:38.412511 [debug] [Thread-1 (]: On test.ufc.not_null_stg_fights_event_id.9c3436bfcc: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "test.ufc.not_null_stg_fights_event_id.9c3436bfcc"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select event_id
+from "ufc"."main"."stg_fights"
+where event_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:17:38.414127 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m00:17:38.414789 [debug] [Thread-1 (]: On test.ufc.not_null_stg_fights_event_id.9c3436bfcc: ROLLBACK
+[0m00:17:38.415042 [debug] [Thread-1 (]: On test.ufc.not_null_stg_fights_event_id.9c3436bfcc: Close
+[0m00:17:38.415282 [info ] [Thread-1 (]: 2 of 6 PASS not_null_stg_fights_event_id ....................................... [[32mPASS[0m in 0.01s]
+[0m00:17:38.415482 [debug] [Thread-1 (]: Finished running node test.ufc.not_null_stg_fights_event_id.9c3436bfcc
+[0m00:17:38.415621 [debug] [Thread-1 (]: Began running node test.ufc.not_null_stg_fights_fight_id.4a1b4965fc
+[0m00:17:38.415785 [info ] [Thread-1 (]: 3 of 6 START test not_null_stg_fights_fight_id ................................. [RUN]
+[0m00:17:38.416020 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ufc.not_null_stg_fights_event_id.9c3436bfcc, now test.ufc.not_null_stg_fights_fight_id.4a1b4965fc)
+[0m00:17:38.416154 [debug] [Thread-1 (]: Began compiling node test.ufc.not_null_stg_fights_fight_id.4a1b4965fc
+[0m00:17:38.418766 [debug] [Thread-1 (]: Writing injected SQL for node "test.ufc.not_null_stg_fights_fight_id.4a1b4965fc"
+[0m00:17:38.419119 [debug] [Thread-1 (]: Began executing node test.ufc.not_null_stg_fights_fight_id.4a1b4965fc
+[0m00:17:38.419684 [debug] [Thread-1 (]: Writing runtime sql for node "test.ufc.not_null_stg_fights_fight_id.4a1b4965fc"
+[0m00:17:38.419909 [debug] [Thread-1 (]: Using duckdb connection "test.ufc.not_null_stg_fights_fight_id.4a1b4965fc"
+[0m00:17:38.420025 [debug] [Thread-1 (]: On test.ufc.not_null_stg_fights_fight_id.4a1b4965fc: BEGIN
+[0m00:17:38.420133 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:17:38.420392 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:38.420497 [debug] [Thread-1 (]: Using duckdb connection "test.ufc.not_null_stg_fights_fight_id.4a1b4965fc"
+[0m00:17:38.420604 [debug] [Thread-1 (]: On test.ufc.not_null_stg_fights_fight_id.4a1b4965fc: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "test.ufc.not_null_stg_fights_fight_id.4a1b4965fc"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fight_id
+from "ufc"."main"."stg_fights"
+where fight_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:17:38.421676 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m00:17:38.422259 [debug] [Thread-1 (]: On test.ufc.not_null_stg_fights_fight_id.4a1b4965fc: ROLLBACK
+[0m00:17:38.422484 [debug] [Thread-1 (]: On test.ufc.not_null_stg_fights_fight_id.4a1b4965fc: Close
+[0m00:17:38.422705 [info ] [Thread-1 (]: 3 of 6 PASS not_null_stg_fights_fight_id ....................................... [[32mPASS[0m in 0.01s]
+[0m00:17:38.422900 [debug] [Thread-1 (]: Finished running node test.ufc.not_null_stg_fights_fight_id.4a1b4965fc
+[0m00:17:38.423028 [debug] [Thread-1 (]: Began running node test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64
+[0m00:17:38.423172 [info ] [Thread-1 (]: 4 of 6 START test relationships_stg_fights_event_id__event_id__ref_stg_events_ . [RUN]
+[0m00:17:38.423334 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ufc.not_null_stg_fights_fight_id.4a1b4965fc, now test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64)
+[0m00:17:38.423456 [debug] [Thread-1 (]: Began compiling node test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64
+[0m00:17:38.429895 [debug] [Thread-1 (]: Writing injected SQL for node "test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64"
+[0m00:17:38.430311 [debug] [Thread-1 (]: Began executing node test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64
+[0m00:17:38.430986 [debug] [Thread-1 (]: Writing runtime sql for node "test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64"
+[0m00:17:38.431263 [debug] [Thread-1 (]: Using duckdb connection "test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64"
+[0m00:17:38.431400 [debug] [Thread-1 (]: On test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64: BEGIN
+[0m00:17:38.431522 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:17:38.431868 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:38.431979 [debug] [Thread-1 (]: Using duckdb connection "test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64"
+[0m00:17:38.432130 [debug] [Thread-1 (]: On test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select event_id as from_field
+    from "ufc"."main"."stg_fights"
+    where event_id is not null
+),
+
+parent as (
+    select event_id as to_field
+    from "ufc"."main"."stg_events"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:17:38.438818 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m00:17:38.439598 [debug] [Thread-1 (]: On test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64: ROLLBACK
+[0m00:17:38.439873 [debug] [Thread-1 (]: On test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64: Close
+[0m00:17:38.440107 [info ] [Thread-1 (]: 4 of 6 PASS relationships_stg_fights_event_id__event_id__ref_stg_events_ ....... [[32mPASS[0m in 0.02s]
+[0m00:17:38.440298 [debug] [Thread-1 (]: Finished running node test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64
+[0m00:17:38.440428 [debug] [Thread-1 (]: Began running node test.ufc.unique_stg_events_event_id.66ebb17438
+[0m00:17:38.440583 [info ] [Thread-1 (]: 5 of 6 START test unique_stg_events_event_id ................................... [RUN]
+[0m00:17:38.440752 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ufc.relationships_stg_fights_event_id__event_id__ref_stg_events_.367789cc64, now test.ufc.unique_stg_events_event_id.66ebb17438)
+[0m00:17:38.440869 [debug] [Thread-1 (]: Began compiling node test.ufc.unique_stg_events_event_id.66ebb17438
+[0m00:17:38.444327 [debug] [Thread-1 (]: Writing injected SQL for node "test.ufc.unique_stg_events_event_id.66ebb17438"
+[0m00:17:38.444677 [debug] [Thread-1 (]: Began executing node test.ufc.unique_stg_events_event_id.66ebb17438
+[0m00:17:38.445293 [debug] [Thread-1 (]: Writing runtime sql for node "test.ufc.unique_stg_events_event_id.66ebb17438"
+[0m00:17:38.445528 [debug] [Thread-1 (]: Using duckdb connection "test.ufc.unique_stg_events_event_id.66ebb17438"
+[0m00:17:38.445636 [debug] [Thread-1 (]: On test.ufc.unique_stg_events_event_id.66ebb17438: BEGIN
+[0m00:17:38.445743 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:17:38.446033 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:38.446164 [debug] [Thread-1 (]: Using duckdb connection "test.ufc.unique_stg_events_event_id.66ebb17438"
+[0m00:17:38.446281 [debug] [Thread-1 (]: On test.ufc.unique_stg_events_event_id.66ebb17438: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "test.ufc.unique_stg_events_event_id.66ebb17438"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    event_id as unique_field,
+    count(*) as n_records
+
+from "ufc"."main"."stg_events"
+where event_id is not null
+group by event_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:17:38.447713 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m00:17:38.448373 [debug] [Thread-1 (]: On test.ufc.unique_stg_events_event_id.66ebb17438: ROLLBACK
+[0m00:17:38.448605 [debug] [Thread-1 (]: On test.ufc.unique_stg_events_event_id.66ebb17438: Close
+[0m00:17:38.448844 [info ] [Thread-1 (]: 5 of 6 PASS unique_stg_events_event_id ......................................... [[32mPASS[0m in 0.01s]
+[0m00:17:38.449053 [debug] [Thread-1 (]: Finished running node test.ufc.unique_stg_events_event_id.66ebb17438
+[0m00:17:38.449219 [debug] [Thread-1 (]: Began running node test.ufc.unique_stg_fights_fight_id.0248bc3c52
+[0m00:17:38.449383 [info ] [Thread-1 (]: 6 of 6 START test unique_stg_fights_fight_id ................................... [RUN]
+[0m00:17:38.449545 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ufc.unique_stg_events_event_id.66ebb17438, now test.ufc.unique_stg_fights_fight_id.0248bc3c52)
+[0m00:17:38.449666 [debug] [Thread-1 (]: Began compiling node test.ufc.unique_stg_fights_fight_id.0248bc3c52
+[0m00:17:38.451769 [debug] [Thread-1 (]: Writing injected SQL for node "test.ufc.unique_stg_fights_fight_id.0248bc3c52"
+[0m00:17:38.452045 [debug] [Thread-1 (]: Began executing node test.ufc.unique_stg_fights_fight_id.0248bc3c52
+[0m00:17:38.452714 [debug] [Thread-1 (]: Writing runtime sql for node "test.ufc.unique_stg_fights_fight_id.0248bc3c52"
+[0m00:17:38.452980 [debug] [Thread-1 (]: Using duckdb connection "test.ufc.unique_stg_fights_fight_id.0248bc3c52"
+[0m00:17:38.453088 [debug] [Thread-1 (]: On test.ufc.unique_stg_fights_fight_id.0248bc3c52: BEGIN
+[0m00:17:38.453192 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:17:38.453608 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:17:38.453726 [debug] [Thread-1 (]: Using duckdb connection "test.ufc.unique_stg_fights_fight_id.0248bc3c52"
+[0m00:17:38.453839 [debug] [Thread-1 (]: On test.ufc.unique_stg_fights_fight_id.0248bc3c52: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ufc", "target_name": "dev", "node_id": "test.ufc.unique_stg_fights_fight_id.0248bc3c52"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    fight_id as unique_field,
+    count(*) as n_records
+
+from "ufc"."main"."stg_fights"
+where fight_id is not null
+group by fight_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:17:38.455608 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m00:17:38.456262 [debug] [Thread-1 (]: On test.ufc.unique_stg_fights_fight_id.0248bc3c52: ROLLBACK
+[0m00:17:38.456517 [debug] [Thread-1 (]: On test.ufc.unique_stg_fights_fight_id.0248bc3c52: Close
+[0m00:17:38.456774 [info ] [Thread-1 (]: 6 of 6 PASS unique_stg_fights_fight_id ......................................... [[32mPASS[0m in 0.01s]
+[0m00:17:38.456975 [debug] [Thread-1 (]: Finished running node test.ufc.unique_stg_fights_fight_id.0248bc3c52
+[0m00:17:38.457429 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:17:38.457535 [debug] [MainThread]: On master: BEGIN
+[0m00:17:38.457618 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m00:17:38.457807 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m00:17:38.457900 [debug] [MainThread]: On master: COMMIT
+[0m00:17:38.457992 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:17:38.458076 [debug] [MainThread]: On master: COMMIT
+[0m00:17:38.458230 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m00:17:38.458320 [debug] [MainThread]: On master: Close
+[0m00:17:38.458446 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:17:38.458531 [debug] [MainThread]: Connection 'test.ufc.unique_stg_fights_fight_id.0248bc3c52' was properly closed.
+[0m00:17:38.458626 [info ] [MainThread]: 
+[0m00:17:38.458733 [info ] [MainThread]: Finished running 6 data tests in 0 hours 0 minutes and 0.12 seconds (0.12s).
+[0m00:17:38.459196 [debug] [MainThread]: Command end result
+[0m00:17:38.474045 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jordonchau/ufc-pipeline/transform/target/manifest.json
+[0m00:17:38.474930 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jordonchau/ufc-pipeline/transform/target/semantic_manifest.json
+[0m00:17:38.475587 [debug] [MainThread]: Wrote artifact OsiDocument to /Users/jordonchau/ufc-pipeline/transform/target/osi_document.json
+[0m00:17:38.478598 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/jordonchau/ufc-pipeline/transform/target/run_results.json
+[0m00:17:38.478727 [info ] [MainThread]: 
+[0m00:17:38.478867 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:17:38.478970 [info ] [MainThread]: 
+[0m00:17:38.479080 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=6
+[0m00:17:38.480379 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 0.47665122, "process_in_blocks": "0", "process_kernel_time": 0.140682, "process_mem_max_rss": "175603712", "process_out_blocks": "0", "process_user_time": 0.915315}
+[0m00:17:38.480546 [debug] [MainThread]: Command `dbt test` succeeded at 00:17:38.480516 after 0.48 seconds
+[0m00:17:38.480686 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107134710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107abcf70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107abd7b0>]}
+[0m00:17:38.480798 [debug] [MainThread]: Flushing usage events
+[0m00:17:38.549149 [debug] [MainThread]: An error was encountered while trying to flush usage events

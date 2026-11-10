@@ -1,0 +1,6 @@
+ufc:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/ufc.duckdb

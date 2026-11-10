@@ -1,0 +1,9 @@
+name: ufc
+version: "1.0.0"
+profile: ufc
+model-paths: ["models"]
+
+models:
+  ufc:
+    staging:
+      +materialized: view

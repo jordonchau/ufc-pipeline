@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_events
+    columns:
+      - name: event_id
+        tests: [unique, not_null]
+
+  - name: stg_fights
+    columns:
+      - name: fight_id
+        tests: [unique, not_null]
+      - name: event_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_events')
+              field: event_id
