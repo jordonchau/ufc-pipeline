@@ -1,0 +1,12 @@
+services:
+  airflow:
+    build: .
+    command: standalone            # scheduler + web UI in one container (fine for local use)
+    ports:
+      - "8080:8080"                # open http://localhost:8080
+    volumes:
+      - ./:/opt/ufc                # your project, so the DAG runs your real code and data
+      - ./dags:/opt/airflow/dags   # where Airflow looks for DAGs
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__DEFAULT_TIMEZONE: "America/New_York"
