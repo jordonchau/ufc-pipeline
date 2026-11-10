@@ -72,21 +72,6 @@ dbt tests run after every refresh, and the pipeline stops if any fail:
 - `relationships`: every fight links to a real event, and every winner to a real fighter
 - `accepted_values`: fighter results are only W, L, D, or NC
 
-## Findings
-
-**Fights go the distance far more often than they used to.**
-
-| Era | Fights | KO/TKO | Submission | Decision |
-|---|---|---|---|---|
-| 1994–2000 | 267 | 43% | 36% | 19% |
-| 2001–2010 | 1,251 | 37% | 25% | 37% |
-| 2011–2020 | 4,399 | 31% | 18% | 49% |
-| 2021–2026 | 3,071 | 33% | 17% | 48% |
-
-**Finish rate drops with weight class.** Heavyweight fights end by KO or submission about 66% of the time, compared with about 45% at flyweight and about 34% at women's strawweight.
-
-**All-time wins leader:** Jim Miller, with 28 UFC wins.
-
 ## How to run it
 
 **Requirements:** Python 3.11+, Docker Desktop
