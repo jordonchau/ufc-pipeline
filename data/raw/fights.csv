@@ -1,0 +1,15 @@
+fight_id,event_id,bout_order,fighter_1,fighter_1_id,fighter_2,fighter_2_id,outcome,winner,weight_class,method,method_detail,round,time,fight_url
+4e6c304705f82ce0,110404b505fb562c,1,Johnny Walker,c21f26bbde777573,Waldo Cortes Acosta,fc08099550072fe4,win,Johnny Walker,Heavyweight,KO/TKO,Punch,3,2:27,http://ufcstats.com/fight-details/4e6c304705f82ce0
+588347615984ec29,110404b505fb562c,2,Tatiana Suarez,b08012bbe542592a,Virna Jandiroba,7dda2cf308f24a02,win,Tatiana Suarez,Women's Strawweight,U-DEC,,3,5:00,http://ufcstats.com/fight-details/588347615984ec29
+1f9c3310eeb1fb93,110404b505fb562c,3,Elijah Smith,7478b7f959ba61f5,Davey Grant,113df4fde64735c6,win,Elijah Smith,Bantamweight,KO/TKO,Punches,1,1:00,http://ufcstats.com/fight-details/1f9c3310eeb1fb93
+1955773d3e42a616,110404b505fb562c,4,Lucas Fernando,3df223aeaacecf3f,Billy Elekana,07a74004d964c7f4,win,Lucas Fernando,Light Heavyweight,U-DEC,,3,5:00,http://ufcstats.com/fight-details/1955773d3e42a616
+d5bb4cadca484a31,110404b505fb562c,5,Nina Milosevic,eabece0edc2d62ca,Priscila Cachoeira,b1e5bcaad32a3cac,win,Nina Milosevic,Women's Bantamweight,KO/TKO,Elbows,2,3:40,http://ufcstats.com/fight-details/d5bb4cadca484a31
+beda278798850354,110404b505fb562c,6,Mitch Raposo,0be6776db31d98ec,Marcos Degli,0575068a0f83f963,win,Mitch Raposo,Flyweight,U-DEC,,3,5:00,http://ufcstats.com/fight-details/beda278798850354
+85d62e821823ba69,110404b505fb562c,7,Ollie Schmid,b701f095e6ccb149,Keiichiro Nakamura,3618e0632ecdba9c,win,Ollie Schmid,Featherweight,U-DEC,,3,5:00,http://ufcstats.com/fight-details/85d62e821823ba69
+a21a21810258623e,110404b505fb562c,8,Thomas Petersen,764d39074a352e33,Gabriel Lorenco,e3fc6c1fab298561,win,Thomas Petersen,Heavyweight,KO/TKO,Punches,3,4:47,http://ufcstats.com/fight-details/a21a21810258623e
+1452e906a169875d,110404b505fb562c,9,Karine Silva,9d62c2d8ee151f08,Gabriella Fernandes,a6eb54ae17a551be,win,Karine Silva,Women's Flyweight,U-DEC,,3,5:00,http://ufcstats.com/fight-details/1452e906a169875d
+9f33576489a0370c,110404b505fb562c,10,Murtazali Magomedov,d436f5d55156a521,Jose Delano,d7c4956d61ae76a9,win,Murtazali Magomedov,Featherweight,U-DEC,,3,5:00,http://ufcstats.com/fight-details/9f33576489a0370c
+397399a62874a00e,110404b505fb562c,11,Austin Bashi,d3f89fa685bd8420,Carlos Calderon,7d4d7583df7eebf9,win,Austin Bashi,Featherweight,SUB,Rear Naked Choke,1,1:07,http://ufcstats.com/fight-details/397399a62874a00e
+869c3394cadfb23c,110404b505fb562c,12,Andre Petroski,5f61780fe5e9b6d0,Mantas Kondratavicius,3cc506f115cbb9d5,win,Andre Petroski,Middleweight,KO/TKO,Punches,2,4:39,http://ufcstats.com/fight-details/869c3394cadfb23c
+cd446b8759b30093,110404b505fb562c,13,Seokhyeon Ko,4a07b1988477502c,Wellington Turman,4dcfb28c011c11b2,win,Seokhyeon Ko,Welterweight,U-DEC,,3,5:00,http://ufcstats.com/fight-details/cd446b8759b30093
+e2cd8521c8ba55b2,110404b505fb562c,14,Jose Souza,20a0e4cc5227c117,Jonny Parsons,2975297f505e9447,win,Jose Souza,Welterweight,KO/TKO,Punches,1,4:16,http://ufcstats.com/fight-details/e2cd8521c8ba55b2
